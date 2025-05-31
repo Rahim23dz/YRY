@@ -1,0 +1,408 @@
+
+/* ===== HEADER MODERN ===== */
+header {
+background-color: #FFFFFF;
+  padding: 0px 40px 0px 40px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  gap: 15px;
+}
+
+/* ===== SECTION TOP HEADER (LOGO + SEARCH + BTN) ===== */
+.header-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px 40px;
+  flex-wrap: wrap;
+}
+
+/* LOGO */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-left img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.header-left h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* SEARCH BOX */
+.search-box {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-box input[type="text"] {
+  width: 500px;          
+  padding: 15px 40px 15px 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #EFEFF0;
+  color: #212121;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-box input[type="text"]:focus {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.search-icon {
+  position: absolute;
+  right: 15px;
+  font-size: 1.2rem;
+  color: transparent;
+  -webkit-text-stroke: 1px #666;
+  pointer-events: none;
+}
+
+/* ACTIONS (LOGIN / PROFIL) */
+.header-actions {
+  display: flex;
+  gap: 10px; /* مسافة بين الأزرار */
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.header-actions .btn-header {
+  padding: 0px 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* أزرار الأيقونات */
+.icon-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color:#1e1e1e ;
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  width: 70px;
+  height: 70px;
+  transition: color 0.3s ease;
+}
+
+.icon-btn:hover {
+  color: orange;
+}
+
+.icon-btn .icon {
+  font-size: 1.5rem;
+  margin-bottom: 3px;
+}
+
+.icon-btn .label {
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.icon-btn .icon svg,
+.icon-btn .icon i {
+  display: block;
+  stroke: currentColor;
+  fill: none;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 4px;
+}
+
+/* ===== SECTION BOTTOM HEADER (NAVIGATION) ===== */
+
+/* قائمة التنقل */
+.header-nav {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.header-nav a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  position: relative; /* مهم للعنصر ::after */
+  transition: color 0.3s ease;
+  padding-bottom: 8px; /* مساحة للحد السفلي */
+}
+
+.header-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;  /* سمك الحد */
+  width: 0;
+  background-color: orange;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.header-nav a:hover,
+.header-nav a:focus {
+  color: orange;
+}
+
+.header-nav a:hover::after,
+.header-nav a:focus::after {
+  width: 100%;
+}
+
+
+/* زر صفحة البائع */
+.btn-vendeur {
+  background-color: #ff6f00;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.btn-vendeur:hover {
+  background-color: #ff9100;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .header-top {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .search-box input[type="text"] {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .header-nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+.btn-blue {
+  background-color: #007BFF; /* لون أزرق عصري */
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.btn-blue:hover,
+.btn-blue:focus {
+  background-color: #0056b3; /* لون أزرق أغمق عند التحويم */
+  outline: none;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #111;
+}
+
+h1 {
+  text-align: center;
+  color: #ff6f00;
+  margin-bottom: 30px;
+}
+
+
+/* Main */
+main {
+  padding: 30px;
+  max-width: 1000px;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+main h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #222;
+}
+
+main label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #555;
+}
+
+main select,
+main input[type="number"] {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#filtrerBtn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#filtrerBtn:hover {
+  background-color: darkorange;
+}
+
+/* Produits */
+.produits-liste {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* خلفية مغايرة للمنتجات */
+.product {
+  background-color: #fff; /* أبيض باش الصور تبان */
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding: 15px;
+  margin: 10px;
+  width: 280px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.product:hover {
+  transform: scale(1.03);
+}
+
+/* صورة المنتج */
+.product img {
+  max-width: 100%;
+  height: 180px;
+  object-fit: contain;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* عنوان المنتج */
+.product h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* معلومات المنتج */
+.product p {
+  font-size: 14px;
+  color: #555;
+  margin: 4px 0;
+}
+
+.btn-ajouter-panier {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: orange;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-ajouter-panier:hover {
+  background-color: darkorange;
+}
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+}
+.btn-ajouter-panier {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-ajouter-panier:hover {
+  background-color: #ff9500;
+  transform: scale(1.03);
+}
+
+.btn-ajouter-panier:active {
+  background-color: #e67e00;
+  transform: scale(0.98);
+}
+.btn-ajouter-panier[disabled] {
+  cursor: not-allowed;
+  opacity: 0.6;
+  position: relative;
+  pointer-events: auto;
+}
+
+.btn-ajouter-panier[disabled]::after {
+  content: attr(title);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 10;
+}
+
+.btn-ajouter-panier[disabled]:hover::after {
+  opacity: 1;
+} 
+ .etat-red { color: red; font-weight: bold; }
+  .etat-orange { color: orange; font-weight: bold; }
+  .etat-green { color: green; font-weight: bold; }
+  .etat-default { color: black; }

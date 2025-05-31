@@ -1,0 +1,522 @@
+:root {
+    --primary: #004d40;
+    --primary-light: #00796b;
+    --white: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --text-dark: #222;
+}
+
+/* 🌌 خلفية الصفحة */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    background: white;
+    color: var(--text-dark);
+}
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto;
+  gap: 10px;
+  flex-wrap: wrap;
+  max-width: 900px;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 100px;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  background-color: #ccc;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.step-title {
+  margin-top: 8px;
+  font-size: 14px;
+  text-align: center;
+  color: #333;
+}
+
+.progress-line {
+  flex: 1;
+  height: 2px;
+  background-color: #ccc;
+  max-width: 100px;
+}
+
+.progress-step.active .step-number {
+  background-color: orange;
+}
+
+.progress-step.completed .step-number {
+  background-color: green;
+}
+
+
+/* 🧊 حاوية السلة */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto; /* هذا يضمن توسيط الحاوية أفقياً */
+    padding: 30px;
+    border-radius: 20px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center; /* هذا يضمن توسيط المحتوى داخل الحاوية */
+    align-items: center; /* هذا يضمن توسيط المحتوى رأسياً */
+    height: 100%; /* إذا كنت ترغب في أن تكون الحاوية بنفس ارتفاع الصفحة */
+}
+
+
+
+/* 🛍️ عنوان الصفحة */
+body .h1 {
+    text-align: center;
+    color: orange;
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+/* 📦 الجدول */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: rgba(0, 77, 64, 0.5);
+    color: #fff;
+}
+
+/* رؤوس الجدول */
+thead th {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 16px;
+    font-size: 15px;
+}
+
+/* خلايا الجدول */
+tbody td {
+    padding: 14px;
+    background-color: rgba(0, 77, 64, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* تأثير عند المرور */
+tbody tr:hover td {
+    background-color: rgba(0, 77, 64, 0.4);
+    transition: background-color 0.3s ease;
+}
+
+/* 🔢 حقل الكمية */
+input.quantite-input {
+    width: 60px;
+    padding: 6px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* 🗑 زر الحذف */
+a.btn-supprimer,
+a.btn-vider {
+    text-decoration: none;
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+a.btn-vider {
+    background-color: var(--primary-light);
+}
+
+a.btn-supprimer:hover,
+a.btn-vider:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* 🎯 السطر الأخير "Total Général" */
+tbody tr:last-child td {
+    font-weight: bold;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* 📱 متجاوب للموبايل */
+@media screen and (max-width: 768px) {
+    table thead {
+        display: none;
+    }
+
+    table, tbody, tr, td {
+        display: block;
+        width: 100%;
+    }
+
+    tr {
+        margin-bottom: 15px;
+    }
+
+    td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        font-weight: bold;
+        color: #ddd;
+        text-align: left;
+    }
+
+    input.quantite-input {
+        width: 100%;
+    }
+}
+
+:root {
+  --primary: #00796b;
+  --secondary: #004d40;
+  --bg: #fafafa;
+  --text: #212121;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ===== HEADER MODERN ===== */
+header {
+background-color: #FFFFFF;
+  padding: 0px 40px 0px 40px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  gap: 15px;
+}
+
+/* ===== SECTION TOP HEADER (LOGO + SEARCH + BTN) ===== */
+.header-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px 40px;
+  flex-wrap: wrap;
+
+
+}
+
+/* LOGO */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-left img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.header-left h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* SEARCH BOX */
+.search-box {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-box input[type="text"] {
+  width: 500px;          
+  padding: 15px 40px 15px 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #EFEFF0;
+  color: #212121;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-box input[type="text"]:focus {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.search-icon {
+  position: absolute;
+  right: 15px;
+  font-size: 1.2rem;
+  color: transparent;
+  -webkit-text-stroke: 1px #666;
+  pointer-events: none;
+}
+
+/* ACTIONS (LOGIN / PROFIL) */
+.header-actions {
+  display: flex;
+  gap: 10px; /* مسافة بين الأزرار */
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.header-actions .btn-header {
+  padding: 0px 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* أزرار الأيقونات */
+.icon-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color:#1e1e1e ;
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  width: 70px;
+  height: 70px;
+  transition: color 0.3s ease;
+}
+
+.icon-btn:hover {
+  color: orange;
+}
+
+.icon-btn .icon {
+  font-size: 1.5rem;
+  margin-bottom: 3px;
+}
+
+.icon-btn .label {
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.icon-btn .icon svg,
+.icon-btn .icon i {
+  display: block;
+  stroke: currentColor;
+  fill: none;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 4px;
+}
+
+/* ===== SECTION BOTTOM HEADER (NAVIGATION) ===== */
+
+/* قائمة التنقل */
+.header-nav {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.header-nav a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  position: relative; /* مهم للعنصر ::after */
+  transition: color 0.3s ease;
+  padding-bottom: 8px; /* مساحة للحد السفلي */
+}
+
+.header-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;  /* سمك الحد */
+  width: 0;
+  background-color: orange;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.header-nav a:hover,
+.header-nav a:focus {
+  color: orange;
+}
+
+.header-nav a:hover::after,
+.header-nav a:focus::after {
+  width: 100%;
+}
+
+
+/* زر صفحة البائع */
+.btn-vendeur {
+  background-color: #ff6f00;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.btn-vendeur:hover {
+  background-color: #ff9100;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .header-top {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .search-box input[type="text"] {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .header-nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+.btn-blue {
+  background-color: #007BFF; /* لون أزرق عصري */
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.btn-blue:hover,
+.btn-blue:focus {
+  background-color: #0056b3; /* لون أزرق أغمق عند التحويم */
+  outline: none;
+}
+
+
+/* ترويسة الجدول */
+thead th {
+    background-color: #ff9800; /* برتقالي دافئ */
+    color: #fff;
+    padding: 16px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* خلايا الجدول */
+tbody td {
+    padding: 14px;
+    background-color: #fff3e0; /* برتقالي فاتح جداً */
+    border-bottom: 1px solid #ffe0b2; /* ظل فاتح للحد */
+    color: #5d4037; /* بني غامق - ليكن نص واضح لكن غير أسود */
+}
+
+/* تأثير عند المرور */
+tbody tr:hover td {
+    background-color: #ffe0b2; /* أصفر برتقالي فاتح */
+    transition: background-color 0.3s ease;
+}
+
+/* زر الحذف */
+a.btn-supprimer,
+a.btn-vider {
+    text-decoration: none;
+    background-color: red; /* برتقالي متوسط */
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+a.btn-vider {
+    background-color: red; /* برتقالي فاتح */
+}
+
+a.btn-supprimer:hover,
+a.btn-vider:hover {
+    background-color: #ef6c00; /* برتقالي غامق عند التحويم */
+    transform: scale(1.05);
+}
+
+/* السطر الأخير "Total Général" */
+tbody tr:last-child td {
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #ffe0b2; /* نفس لون hover */
+    color: #bf360c; /* برتقالي غامق للنص */
+}
+button.btn-confirmer {
+    background-color: #007BFF; /* أزرق عصري */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,123,255,0.4);
+}
+
+button.btn-confirmer:hover,
+button.btn-confirmer:focus {
+    background-color: #0056b3; /* أزرق أغمق عند التحويم */
+    outline: none;
+    box-shadow: 0 6px 12px rgba(0,86,179,0.6);
+}

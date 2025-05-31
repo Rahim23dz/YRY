@@ -1,0 +1,448 @@
+:root {
+  --primary: #00796b;
+  --secondary: #004d40;
+  --bg: #fafafa;
+  --text: #212121;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url('../../img/amrt.jpeg'); /* Assurez-vous que le chemin est correct */
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #fff; /* Texte en blanc pour le contraste */
+}
+
+header, footer {
+  background-color: rgba(0, 0, 0, 0.5); /* Un fond sombre pour les sections header et footer */
+  color: #fff;
+}
+
+
+header {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: var(--white);
+  text-align: center;
+  padding: 50px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+header img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+nav {
+  background-color: var(--secondary);
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav a {
+  color: var(--white);
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #b2dfdb;
+}
+
+nav input[type="text"] {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 10px;
+}
+
+
+.produit img {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 8px;
+
+}
+
+.produits-group {
+  margin-bottom: 40px;
+}
+
+.produits-group h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.produits {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.produit {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.produit h4 {
+  font-size: 18px;
+  margin-top: 0;
+  color: #333;
+}
+
+.produit p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.produit img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.produit:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.produit:hover h4 {
+  color: #007bff; /* Change la couleur du titre au survol */
+}
+
+
+footer {
+  background-color: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 40px 20px;
+}
+
+button {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: var(--secondary);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
+  border-radius: 8px;
+}
+
+#loginSignupToggle button {
+  width: 50%;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #00796b;
+  color: white;
+  cursor: pointer;
+}
+
+#loginSignupToggle button.active {
+  background-color: #004d40;
+}
+
+.form-content input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-content button {
+  width: 100%;
+  padding: 10px;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-content button:hover {
+  background-color: #004d40;
+}
+
+.btn-header {
+  padding: 8px 15px;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn-header:hover {
+  background-color: #555;
+}
+/* شريط التنقل المتجاوب */
+.menu-toggle {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: var(--white);
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .header-nav {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .header-nav.active {
+    display: flex;
+  }
+
+  .header-left {
+    flex: 1;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-box input[type="text"] {
+    width: 100%;
+  }
+}
+
+/* ===== Nouveau header moderne ===== */
+header {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: var(--white);
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+header img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+ .header-nav {
+/* لون داكن أنيق */
+    padding: 12px 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  
+}
+
+nav a {
+  margin-left: 20px;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #f1f1f1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #80cbc4;
+}
+/* ===== Fin nouveau header ===== */
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-box input[type="text"] {
+  background-color: #2c2c2c;
+  color: #eee;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 40px 10px 15px;
+  font-size: 1rem;
+  width: 200px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.search-box input[type="text"]:focus {
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.search-icon {
+  color: #aaa;
+}
+
+.search-icon {
+  position: absolute;
+  right: 45px;
+  font-size: 1rem;
+  pointer-events: none; /* يجعل الأيقونة غير تفاعلية */
+}
+
+
+.bienvenue-msg {
+  text-align: center;
+  font-size: 20px;
+  margin: 15px 0;
+  color: #1e90ff;
+}
+
+nav {
+  background-color: var(--secondary);
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav input[type="text"] {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+
+/* تنسيق 3 نقاط */
+.menu-container {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.menu-toggle {
+  font-size: 30px;
+  color: var(--white);
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-options {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  display: none;
+  width: 150px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+.menu-options li {
+  padding: 10px 15px;
+  transition: background 0.3s;
+}
+
+.menu-options li:hover {
+  background-color: #f0f0f0;
+}
+
+.menu-options a {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+.menu-options.show {
+  display: block;
+}

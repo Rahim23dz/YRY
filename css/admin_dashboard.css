@@ -1,0 +1,307 @@
+/* Variables CSS harmonisées avec home.css */
+:root {
+  --primary: #00796b;
+  --secondary: #004d40;
+  --bg: #fafafa;
+  --text: #212121;
+  --white: #fff;
+  --orange: #ff6f00;
+}
+
+/* Reset harmonisé */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ===== HEADER HARMONISÉ ===== */
+header {
+  background-color: #ffffff;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-left img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.header-left h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.header-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Bouton harmonisé */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--primary);
+  color: var(--white);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  background-color: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-orange {
+  background-color: var(--orange);
+}
+
+.btn-orange:hover {
+  background-color: #ff9100;
+}
+
+/* ===== SECTION PRINCIPALE ===== */
+main {
+  padding: 0 40px 40px 40px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.dashboard-title {
+  font-size: 2.5rem;
+  color: var(--text);
+  margin-bottom: 30px;
+  text-align: center;
+  border-bottom: 3px solid var(--orange);
+  padding-bottom: 15px;
+}
+
+/* ===== GRILLE DES CARTES ===== */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+/* ===== STYLE DES CARTES HARMONISÉ ===== */
+.card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-color: var(--orange);
+}
+
+.card h2 {
+  margin-bottom: 15px;
+  color: var(--primary);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: var(--orange);
+}
+
+.card .description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+
+/* ===== ICÔNES POUR LES CARTES ===== */
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: var(--primary);
+  display: block;
+}
+
+.card-icon.users::before {
+  content: "👥";
+}
+
+.card-icon.products::before {
+  content: "📦";
+}
+
+.card-icon.orders::before {
+  content: "🛒";
+}
+
+.card-icon.vendors::before {
+  content: "🏪";
+}
+
+/* ===== SECTION ACTIONS RAPIDES ===== */
+.quick-actions {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.quick-actions h3 {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+/* ===== FOOTER HARMONISÉ ===== */
+footer {
+  background-color: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 50px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-content p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .header-left h1 {
+    font-size: 1.5rem;
+  }
+
+  main {
+    padding: 0 20px 40px 20px;
+  }
+
+  .dashboard-title {
+    font-size: 2rem;
+  }
+
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .card p {
+    font-size: 1.8rem;
+  }
+
+  .actions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-left img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header-left h1 {
+    font-size: 1.3rem;
+  }
+
+  .dashboard-title {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== ANIMATIONS SUPPLÉMENTAIRES ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.card:nth-child(4) {
+  animation-delay: 0.4s;
+}

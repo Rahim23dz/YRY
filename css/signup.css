@@ -1,0 +1,79 @@
+:root {
+    --primary: #00796b;
+    --secondary: #004d40;
+    --bg: #fafafa;
+    --text: #212121;
+    --white: #fff;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: var(--white);
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  header img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  main {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form label {
+    margin: 10px 0 5px;
+  }
+  
+  form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: var(--secondary);
+  }
+  
+  footer {
+    background-color: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  

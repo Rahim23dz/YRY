@@ -1,0 +1,738 @@
+:root {
+  --primary: #00796b;
+  --secondary: #004d40;
+  --bg: #fafafa;
+  --text: #212121;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ===== HEADER MODERNE ===== */
+
+/* ===== MENU 3 POINTS ===== */
+.menu-container {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.menu-toggle {
+  display: block;
+  font-size: 30px;
+  color: var(--white);
+  padding: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-options {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  display: none;
+  width: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.menu-options li {
+  padding: 10px 15px;
+  transition: background 0.3s;
+}
+
+.menu-options li:hover {
+  background-color: #f0f0f0;
+}
+
+.menu-options a {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+.menu-options.show {
+  display: block;
+}
+
+
+
+
+
+
+
+/* ===== SECTION PRODUITS ===== */
+section {
+  padding: 0px 40px; /* زيادة الفراغ الجانبي */
+  max-width: 1400px; /* توسيع الحد الأقصى للعرض */
+  margin: auto;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  color: #3A3B3F;
+  border-bottom: 2px solid orange;
+  padding-bottom: 10px;
+}
+
+.produits-groupe {
+  margin-bottom: 40px;
+}
+
+.produits-groupe h3 {
+  font-size: 24px;
+  color: orange;
+  margin-bottom: 20px;
+}
+
+.produits {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* زيادة عرض كل بطاقة */
+  gap: 24px;
+}
+
+.produit {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.produit img {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.produit h4 {
+  font-size: 18px;
+  margin-top: 0;
+  color: #333;
+}
+
+.produit p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.produit:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.produit:hover h4 {
+  color: orange;
+}
+
+
+/* ===== BOUTONS ===== */
+button {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: var(--secondary);
+}
+
+
+/* ===== MODAL ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
+  border-radius: 8px;
+}
+
+#loginSignupToggle button {
+  width: 50%;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: var(--primary);
+  color: white;
+  cursor: pointer;
+}
+
+#loginSignupToggle button.active {
+  background-color: var(--secondary);
+}
+
+.form-content input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-content button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-content button:hover {
+  background-color: var(--secondary);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: var(--secondary);
+  color: white;
+  padding: 30px 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #f1c40f;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .header-nav {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .header-nav.active {
+    display: flex;
+  }
+
+  .header-left {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-box input[type="text"] {
+    width: 100%;
+  }
+}
+/* الهيكل العام للهيدر */
+:root {
+  --primary: #00796b;
+  --secondary: #004d40;
+  --bg: #fafafa;
+  --text: #212121;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+:root {
+  --primary: #00796b;
+  --secondary: #004d40;
+  --bg: #fafafa;
+  --text: #212121;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ===== HEADER MODERN ===== */
+header {
+background-color: #FFFFFF;
+  padding: 0px 40px 0px 40px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  gap: 15px;
+}
+
+/* ===== SECTION TOP HEADER (LOGO + SEARCH + BTN) ===== */
+.header-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px 40px;
+  flex-wrap: wrap;
+
+
+}
+
+/* LOGO */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-left img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.header-left h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* SEARCH BOX */
+.search-box {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-box input[type="text"] {
+  width: 500px;          
+  padding: 15px 40px 15px 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #EFEFF0;
+  color: #212121;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-box input[type="text"]:focus {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.search-icon {
+  position: absolute;
+  right: 15px;
+  font-size: 1.2rem;
+  color: transparent;
+  -webkit-text-stroke: 1px #666;
+  pointer-events: none;
+}
+
+/* ACTIONS (LOGIN / PROFIL) */
+.header-actions {
+  display: flex;
+  gap: 10px; /* مسافة بين الأزرار */
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.header-actions .btn-header {
+  padding: 0px 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* أزرار الأيقونات */
+.icon-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color:#1e1e1e ;
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  width: 70px;
+  height: 70px;
+  transition: color 0.3s ease;
+}
+
+.icon-btn:hover {
+  color: orange;
+}
+
+.icon-btn .icon {
+  font-size: 1.5rem;
+  margin-bottom: 3px;
+}
+
+.icon-btn .label {
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.icon-btn .icon svg,
+.icon-btn .icon i {
+  display: block;
+  stroke: currentColor;
+  fill: none;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 4px;
+}
+
+/* ===== SECTION BOTTOM HEADER (NAVIGATION) ===== */
+
+/* قائمة التنقل */
+.header-nav {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.header-nav a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  position: relative; /* مهم للعنصر ::after */
+  transition: color 0.3s ease;
+  padding-bottom: 8px; /* مساحة للحد السفلي */
+}
+
+.header-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;  /* سمك الحد */
+  width: 0;
+  background-color: orange;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.header-nav a:hover,
+.header-nav a:focus {
+  color: orange;
+}
+
+.header-nav a:hover::after,
+.header-nav a:focus::after {
+  width: 100%;
+}
+
+
+/* زر صفحة البائع */
+.btn-vendeur {
+  background-color: #ff6f00;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.btn-vendeur:hover {
+  background-color: #ff9100;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .header-top {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .search-box input[type="text"] {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .header-nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+.btn-blue {
+  background-color: #007BFF; /* لون أزرق عصري */
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.btn-blue:hover,
+.btn-blue:focus {
+  background-color: #0056b3; /* لون أزرق أغمق عند التحويم */
+  outline: none;
+}
+.highlights {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #F3F3F3;
+  color: black;
+  font-family: Arial, sans-serif;
+
+  width: 100vw;        /* عرض كامل الشاشة */
+  max-width: 100%;     /* عشان ما يتجاوزش عرض الشاشة */
+  box-sizing: border-box; /* يشمل padding داخل العرض */
+  margin: 0 auto;      /* يمركزها أفقياً */
+}
+
+
+.highlight-item {
+  text-align: center;
+  flex: 1;
+  max-width: 220px;
+  
+  display: flex;           /* نخلي العنصر فليكس */
+  flex-direction: column;  /* العناصر تكون عمودية */
+  align-items: center;     /* نحط العناصر في الوسط أفقياً */
+  justify-content: center; /* نحط العناصر في الوسط عمودياً */
+}
+
+
+.highlight-item i {
+  font-size: 40px;
+  margin-bottom: 12px;
+  color: orange;
+}
+
+.highlight-item p {
+  font-weight: 600;
+  line-height: 1.3;
+  font-size: 1.1rem;
+}
+.highlight-item p strong {
+  font-weight: bold;
+}
+
+.highlight-item p span {
+  font-weight: normal;
+}
+/* Main */
+main {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.produits-liste {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.produit-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.produit-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.produit-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.produit-card h3 {
+  font-size: 22px;
+  margin-top: 15px;
+}
+
+.produit-card p {
+  margin: 10px 0;
+}
+
+.produit-card .prix {
+  font-weight: bold;
+  color: #e74c3c;
+  margin: 10px 0;
+}
+
+.produit-card .ajouter {
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.produit-card .ajouter:hover {
+  background-color: var(--button-hover);
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 30%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--secondary);
+}
+
+.form-content input {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
